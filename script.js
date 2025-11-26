@@ -1,6 +1,6 @@
 let score1 = 0;
 let score2 = 0;
-let audio = new Audio("./_src/dice.mp3");
+let audio = new Audio("./dice.mp3");
 function generate() {
   return Math.floor(Math.random() * 6) + 1;
 }
@@ -22,17 +22,17 @@ function btn1() {
   audio.play();
 
   if (n == 1) {
-    img.src = "./_src/one.png";
+    img.src = "./one.png";
   } else if (n == 2) {
-    img.src = "./_src/two.png";
+    img.src = "./two.png";
   } else if (n == 3) {
-    img.src = "./_src/three.png";
+    img.src = "./three.png";
   } else if (n == 4) {
-    img.src = "./_src/four.png";
+    img.src = "./four.png";
   } else if (n == 5) {
-    img.src = "./_src/five.png";
+    img.src = "./five.png";
   } else if (n == 6) {
-    img.src = "./_src/six.png";
+    img.src = "./six.png";
   }
   sc.innerText = score1;
   document.getElementById("btn2").disabled = false;
@@ -69,17 +69,17 @@ function btn2() {
   );
   audio.play();
   if (n == 1) {
-    img.src = "./_src/one.png";
+    img.src = "./one.png";
   } else if (n == 2) {
-    img.src = "./_src/two.png";
+    img.src = "./two.png";
   } else if (n == 3) {
-    img.src = "./_src/three.png";
+    img.src = "./three.png";
   } else if (n == 4) {
-    img.src = "./_src/four.png";
+    img.src = "./four.png";
   } else if (n == 5) {
-    img.src = "./_src/five.png";
+    img.src = "./five.png";
   } else if (n == 6) {
-    img.src = "./_src/six.png";
+    img.src = "./six.png";
   }
 
   sc.innerText = score2;
@@ -114,8 +114,8 @@ function restart() {
   document.getElementById("score2").innerText = "0";
   const img1 = document.getElementById("img1");
   const img2 = document.getElementById("img2");
-  img1.src = "./_src/six.png";
-  img2.src = "./_src/six.png";
+  img1.src = "./six.png";
+  img2.src = "./six.png";
   document.getElementById("btn1").disabled = false;
   document.getElementById("btn2").disabled = true;
   document.getElementById("start").disabled = true;
