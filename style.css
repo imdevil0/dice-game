@@ -70,6 +70,9 @@ input{
   .main button {
     padding: 10px 20px !important;
   }
+  .info{
+    padding: 5px !important;
+  }
   
 }
 
