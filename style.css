@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 .box {
   padding: 20px 0;
   width: 40%;
@@ -5,12 +8,26 @@
 .marg {
   margin: 0 80px;
 }
+.inner{
+  width: 100px;
+}
 
+nav{
+  position: relative;
+}
+
+.button{
+  position: absolute;
+  right: 2%;
+}
+input{
+  max-width: 100%;
+}
 .animate {
   animation: spin 0.2s;
 }
 
-.popup{
+.info,.popup{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -18,6 +35,7 @@
     z-index: 10;
     display: none ;
 }
+
 
 @keyframes spin {
   0% {
@@ -33,15 +51,18 @@
     width: 100px;
     height: 100px;
   }
+.marg {
+  margin: 0;
+}
 }
 
 @media (max-width: 550px) {
   .marg {
-    margin: 0 40px;
+    margin: 0;
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 470px) {
   img {
     width: 50px;
     height: 50px;
@@ -49,6 +70,7 @@
   .main button {
     padding: 10px 20px !important;
   }
+  
 }
 
 @media (max-width: 350px) {
@@ -59,7 +81,7 @@
   .main button {
     padding: 5px 10px !important;
   }
-  .marg {
-    margin: 0 20px;
+  .inner{
+    width: 100px;
   }
 }
