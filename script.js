@@ -1,6 +1,12 @@
 let score1 = 0;
 let score2 = 0;
 let audio = new Audio("./dice.mp3");
+let button1 = new Audio("./button.mp3");
+let succ = new Audio("./sucess.mp3");
+let sweep = new Audio("./clear.mp3");
+let player1Name="Player 1";
+let player2Name="Player 2";
+
 function generate() {
   return Math.floor(Math.random() * 6) + 1;
 }
@@ -106,8 +112,13 @@ function start() {
   document.getElementById("box1").style.backgroundColor = "rgb(150, 243, 150)";
   document.getElementById("box2").style.backgroundColor = "inherit";
   document.getElementById("popup").style.display = "none";
+  button1.play();
 }
 function restart() {
+  sweep.play();
+  setTimeout(() => {
+    sweep.pause();
+  }, 500);
   score1 = 0;
   score2 = 0;
   document.getElementById("score1").innerText = "0";
@@ -126,6 +137,7 @@ function restart() {
   document.getElementById("sec").style.opacity = 1;
 
   d.style.display = "none";
+  
 }
 
 function checkWinner() {
@@ -135,10 +147,12 @@ function checkWinner() {
     document.getElementById("start").disabled = true;
 
     document.getElementById("popup").style.display = "flex";
-    document.getElementById("winner").innerText = `Player 1 is Winner `;
+    document.getElementById("winner").innerText = `${player1Name} is Winner `;
     document.getElementById("sec").style.opacity = 0.1;
     document.getElementById("popupBtn").addEventListener("click", restart);
+    succ.play();
   }
+
   if (score2 >= 100) {
     document.getElementById("btn1").disabled = true;
     document.getElementById("btn2").disabled = true;
@@ -146,6 +160,31 @@ function checkWinner() {
     document.getElementById("sec").style.opacity = 0.1;
     document.getElementById("popup").style.display = "flex";
     document.getElementById("popupBtn").addEventListener("click", restart);
-    document.getElementById("winner").innerText = `Player 2 is Winner `;
+    document.getElementById("winner").innerText = `${player2Name} is Winner `;
+    succ.play();
   }
+}
+
+function openInfo() {
+  document.getElementById("info").style.display = "flex";
+  document.getElementById("sec").style.opacity = 0.1;
+  button1.play();
+}
+function closeInfo() {
+  document.getElementById("info").style.display = "none";
+  document.getElementById("sec").style.opacity = 1;
+  button1.play();
+}
+
+function player1() {
+  const n = document.getElementById("player1Name").value;
+  if(n==="") n="Player 1";
+  document.getElementById("p1").innerText = n;
+  player1Name=n;
+}
+function player2() {
+  const n = document.getElementById("player2Name").value;
+  if(n==="") n="Player 2";
+  document.getElementById("p2").innerText = n;
+  player2Name=n;
 }
