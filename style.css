@@ -1,4 +1,4 @@
-body{
+body {
   overflow-x: hidden;
 }
 .box {
@@ -8,34 +8,34 @@ body{
 .marg {
   margin: 0 80px;
 }
-.inner{
+.inner {
   width: 100px;
 }
 
-nav{
+nav {
   position: relative;
 }
 
-.button{
+.button {
   position: absolute;
   right: 2%;
 }
-input{
+input {
   max-width: 100%;
 }
 .animate {
   animation: spin 0.2s;
 }
 
-.info,.popup{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 10;
-    display: none ;
+.info,
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: none;
 }
-
 
 @keyframes spin {
   0% {
@@ -51,14 +51,18 @@ input{
     width: 100px;
     height: 100px;
   }
-.marg {
-  margin: 0;
-}
+  .marg {
+    margin: 0;
+  }
 }
 
 @media (max-width: 550px) {
   .marg {
     margin: 0;
+  }
+  .info {
+    width: 90%;
+    padding: 50px 10px !important;
   }
 }
 
@@ -70,10 +74,6 @@ input{
   .main button {
     padding: 10px 20px !important;
   }
-  .info{
-    padding: 5px !important;
-  }
-  
 }
 
 @media (max-width: 350px) {
@@ -84,7 +84,7 @@ input{
   .main button {
     padding: 5px 10px !important;
   }
-  .inner{
+  .inner {
     width: 100px;
   }
 }
