@@ -18,8 +18,13 @@
   </head>
   <body>
     <div id="sec">
-      <div class="nav bg-primary flex justify-content-center mb-4 py-2">
+      <div
+        class="nav bg-primary flex justify-content-center align-items-center mb-4 py-2 relative"
+      >
         <h1 class="text-white text-center">Dice Game</h1>
+        <button class="btn button" onclick="openInfo()">
+          <i class="bi bi-info-circle text-white fs-3"></i>
+        </button>
       </div>
       <div class="container mt-5">
         <div class="main d-flex flex-row justify-content-around">
@@ -27,7 +32,7 @@
             class="box d-flex flex-column border-1 border-black border justify-content-center align-items-center rounded-2"
             id="box1"
           >
-            <p class="fs-4">Player 1</p>
+            <p class="fs-4" id="p1">Player 1</p>
             <img
               src="./six.png"
               alt=""
@@ -49,7 +54,7 @@
             class="box d-flex flex-column border-1 border border-black justify-content-center align-items-center rounded-2"
             id="box2"
           >
-            <p class="fs-4">Player 2</p>
+            <p class="fs-4" id="p2">Player 2</p>
             <img
               src="./six.png"
               alt=""
@@ -76,13 +81,25 @@
             <div
               class="d-flex flex-column justify-content-center align-items-center marg"
             >
-              <p class="fs-4 text">Player 1</p>
+              <input
+                type="text"
+                class="fs-4 text text-center border-0"
+                value="Player 1"
+                id="player1Name"
+                onchange="player1()"
+              />
               <p class="fs-4" id="score1">0</p>
             </div>
             <div
               class="d-flex flex-column justify-content-center align-items-center marg"
             >
-              <p class="fs-4 text">Player 2</p>
+              <input
+                type="text"
+                class="fs-4 text text-center border-0"
+                value="Player 2"
+                id="player2Name"
+                onchange="player2()"
+              />
               <p class="fs-4" id="score2">0</p>
             </div>
           </div>
@@ -115,6 +132,25 @@
       <p id="p"></p>
       <div class="d-flex gap-5 m-5">
         <button class="btn btn-primary px-3 py-1" id="popupBtn">Restart</button>
+      </div>
+    </div>
+
+    <div
+      class="info bg-info p-5 rounded-4 justify-content-center align-items-center flex-column text-white"
+      id="info"
+    >
+      <h2>Info</h2>
+      <ul>
+        <li>Chance will be retain on getting 1-5</li>
+        <li>Chance will be lost on getting 6</li>
+        <li>Score will be added on getting 1-5</li>
+        <li>Score will not be added on getting 6</li>
+        <li>Player who scores 100 will be winner</li>
+      </ul>
+      <div class="d-flex gap-5 m-4">
+        <button class="btn btn-success px-4 py-2" onclick="closeInfo()">
+          Resume
+        </button>
       </div>
     </div>
     <script
